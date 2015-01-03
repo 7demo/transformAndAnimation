@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform</title>
+	<style>
+		html{
+			background: #E3E3E3;
+		}
+		body{
+			position: relative;
+		}
+		*{
+			padding: 0;
+			margin:0;
+		}
+		div{
+			width: 200px;
+			height: 100px;
+			border:1px solid red;
+		}
+		.rotate{
+			transform:rotate(20deg);
+			-ms-transform:rotate(20deg);
+		}
+		.skew{
+			transform:skew(30deg,10deg);
+			-ms-transform:skew(30deg,10deg);
+		}
+		.scale{
+			transform:scale(0.4,0.9);
+			-ms-transform:scale(0.4,0.9);
+		}
+		.translate{
+			transform:translate(100px,-50px);
+			-webkit-transform:translate3d(100px,-50px,30px);
+			-ms-transform:translate(100px,-50px);
+		}
+		.wrap{
+			/*transform-style:preserve-3d;
+			-webkit-transform-style:preserve-3d;*/
+			width: 400px;
+			height:auto;
+			padding: 10px;
+			background: #ccc;
+			-webkit-perspective: 120px;
+		    -moz-perspective: 120px;
+		    -ms-perspective: 120px;
+		    -o-perspective: 120px;
+		    perspective: 120px;
+		}
+		.scale3D1{
+			background:url(1.jpg) no-repeat ;
+			-webkit-transform:scaleZ(0.25) rotateX(45deg) rotateZ(90deg) translateZ(200px);
+			-moz-transform:scaleZ(0.25) rotateX(45deg) translateZ(200px);
+			transform:scaleZ(0.25) rotateX(45deg)  rotateZ(90deg) translateZ(200px);
+		}
+		.scale3D2{
+			background:url(1.jpg) no-repeat ;
+			-webkit-transform:scaleZ(1) rotateX(45deg);
+			-moz-transform:scaleZ(1) rotateX(45deg);
+			transform:scaleZ(1) rotateX(45deg);
+		}
+		.transition{
+			width: 200px;
+			height: 100px;
+			background: red;
+		}
+		.transition:hover{
+			background: blue;
+			width:100px;
+			transition:background,0.5s,ease-in 1s,width,0.5s,ease-out,0.5s;
+		}
+		@-webkit-keyframes randow{
+			from{
+				background: blue,
+				left:0;
+			}
+			12.5%{
+				background: #000;
+				left: 20%;
+			}
+			25%{
+				background: #000;
+				left: 40%;
+			}
+			37.5.5%{
+				background: #000;
+				left: 60%;
+			}
+			50%{
+				background: red;
+				left: 80%;
+			}
+			62.5%{
+				background: #000;
+				left: 60%;
+			}
+			75%{
+				background: #000
+				left: 40%;
+			}
+			87.5%{
+				background: #000
+				left: 20%;
+			}
+			to{
+				background: blue,
+				left:0;
+			}
+		}
+		@-moz-keyframes randow{
+			from{
+				background: blue,
+				left:0;
+			}
+			12.5%{
+				background: #000;
+				left: 20%;
+			}
+			25%{
+				background: #000;
+				left: 40%;
+			}
+			37.5.5%{
+				background: #000;
+				left: 60%;
+			}
+			50%{
+				background: red;
+				left: 80%;
+			}
+			62.5%{
+				background: #000;
+				left: 60%;
+			}
+			75%{
+				background: #000
+				left: 40%;
+			}
+			87.5%{
+				background: #000
+				left: 20%;
+			}
+			to{
+				background: blue,
+				left:0;
+			}
+		}
+		.animation{
+			position: absolute;
+			-webkit-animation:'randow' 10s 10;
+			-moz-animation:'randow' 10s 10;
+		}
+	</style>
+</head>
+<body>
+	<h3>transform:</h3>
+	<p>变形</p>
+	
+	<div class="rotate">
+		rotate
+	</div>
+	<div class="skew">
+		skew
+	</div>
+	<div class="scale">
+		scale
+	</div>
+	<div class="translate">
+		translate
+	</div>
+	<div class="wrap">
+			<div class="scale3D1">
+				scale3D
+			</div>
+			<div class="scale3D2">
+				scale3D
+			</div>
+		
+	</div>
+
+	<div class="transition">
+		transition
+	</div>
+
+	<div class="animation">
+		animation
+	</div>
+	
+</body>
+</html>

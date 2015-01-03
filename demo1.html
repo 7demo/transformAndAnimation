@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变形</title>
+	<style>
+		.stage{
+			width: 900px;
+			min-height: 100px;
+			padding: 50px;
+			border:#D0D0D0 solid 1px;
+			background: #F0F0F0;
+			position: relative;
+			perspective:900px;
+			transform:scale(.5);
+		}
+		.content{
+			width: 200px;
+			height: 150px;
+			transform-style:preserve-3d;
+			position: absolute;
+			left: 50%;
+			transition:transform 1s;
+			-webkit-transform:rotateY(0deg);
+		}
+		.content img{
+			position: absolute;
+			left: 0;
+		}
+		.content img:nth-child(1){
+			-webkit-transform:rotateY(0deg) translateZ(300px);
+		}
+		.content img:nth-child(2){
+			-webkit-transform:rotateY(40deg) translateZ(300px);
+		}
+		.content img:nth-child(3){
+			-webkit-transform:rotateY(80deg) translateZ(300px);
+		}
+		.content img:nth-child(4){
+			-webkit-transform:rotateY(120deg) translateZ(300px);
+		}
+		.content img:nth-child(5){
+			-webkit-transform:rotateY(160deg) translateZ(300px);
+		}
+		.content img:nth-child(6){
+			-webkit-transform:rotateY(200deg) translateZ(300px);
+		}
+		.content img:nth-child(7){
+			-webkit-transform:rotateY(240deg) translateZ(300px);
+		}
+		.content img:nth-child(8){
+			-webkit-transform:rotateY(280deg) translateZ(300px);
+		}
+		.content img:nth-child(9){
+			-webkit-transform:rotateY(320deg) translateZ(300px);
+		}
+		/*90000000为了保证*/
+		.wrap{
+			
+			transform:scale(1);
+			 perspective: 9000000px;  
+			 perspective-origin:50%,50%;
+			 -webkit-perspective-origin:50%,50%;
+		}
+
+		.item{
+			width: 200px;
+			height: 150px;
+			transform-style:preserve-3d;
+			-webkit-transition: -webkit-transform .6s;
+		         -moz-transition: -moz-transform .6s;
+		          -ms-transition: -ms-transform .6s;
+		           -o-transition: -o-transform .6s;
+		              transition: transform .6s;
+		     backface-visibility:hidden;
+		}
+		.item img{
+			width: 200px;
+			height: 150px;
+			display: block;
+			position: absolute;
+			top:0;
+			transform:translateZ(50px);
+		}
+		.text{
+			width: 200px;
+			height: 150px;
+			position: absolute;
+			top: 0;
+			background: #d5d5d5;
+			transform:translateZ(50px) rotateX(-90deg);
+		}
+		.item:hover{
+			transform:translateZ(-50px) rotateX(95px);
+		}
+
+
+	    .item:hover {
+	      -webkit-transform: translateZ(-50px) rotateX(95deg);
+	         -moz-transform: translateZ(-50px) rotateX(95deg);
+	          -ms-transform: translateZ(-50px) rotateX(95deg);
+	           -o-transform: translateZ(-50px) rotateX(95deg);
+	              transform: translateZ(-50px) rotateX(95deg);
+	    }
+    
+	      .item:hover img {
+	        box-shadow: none;
+	        border-radius: 15px;
+	      }
+	      
+	      .item:hover .information {
+	        box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+	        border-radius: 3px;
+	      }
+
+	    .item img {
+	      display: block;
+	      position: absolute;
+	      top: 0;
+	      border-radius: 3px;
+	      box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+	      -webkit-transform: translateZ(50px);
+	         -moz-transform: translateZ(50px);
+	          -ms-transform: translateZ(50px);
+	           -o-transform: translateZ(50px);
+	              transform: translateZ(50px);
+	      -webkit-transition: all .6s;
+	         -moz-transition: all .6s;
+	          -ms-transition: all .6s;
+	           -o-transition: all .6s;
+	              transition: all .6s;
+	      
+	    }
+	    
+    .item .information {
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 150px;
+      width: 200px;
+      background: rgb(236,241,244);
+      background: -moz-linear-gradient(top,  rgba(236,241,244,1) 0%, rgba(190,202,217,1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(236,241,244,1)), color-stop(100%,rgba(190,202,217,1)));
+      background: -webkit-linear-gradient(top,  rgba(236,241,244,1) 0%,rgba(190,202,217,1) 100%);
+      background: -o-linear-gradient(top,  rgba(236,241,244,1) 0%,rgba(190,202,217,1) 100%);
+      background: -ms-linear-gradient(top,  rgba(236,241,244,1) 0%,rgba(190,202,217,1) 100%);
+      background: linear-gradient(to bottom,  rgba(236,241,244,1) 0%,rgba(190,202,217,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecf1f4', endColorstr='#becad9',GradientType=0 );
+      -webkit-transform: rotateX(-90deg) translateZ(50px);
+         -moz-transform: rotateX(-90deg) translateZ(50px);
+          -ms-transform: rotateX(-90deg) translateZ(50px);
+           -o-transform: rotateX(-90deg) translateZ(50px);
+              transform: rotateX(-90deg) translateZ(50px);
+      -webkit-transition: all .6s;
+         -moz-transition: all .6s;
+          -ms-transition: all .6s;
+           -o-transition: all .6s;
+              transition: all .6s;
+      
+    }
+    
+      .information strong {
+        display: block;
+        margin: .2em 0 .5em 0;
+        font-size: 20px;
+        font-family: "Oleo Script";
+      }
+
+
+	</style>
+</head>
+<body>
+	<div class="stage">
+		<div class="content">
+			<img src="6.jpg" alt="">
+			<img src="2.jpg" alt="">
+			<img src="3.jpg" alt="">
+			<img src="4.jpg" alt="">
+			<img src="5.jpg" alt="">
+			<img src="6.jpg" alt="">
+			<img src="7.jpg" alt="">
+			<img src="8.jpg" alt=""> 
+			<img src="9.jpg" alt="">
+		</div>
+	</div>
+	
+	<div class="stage wrap">
+		<div class="item">
+			<img src="2.jpg" alt="">
+			<div class="information text">
+				<p>这是必要内容</p>
+				<p>这是必要内容</p>
+				<p>这是必要内容</p>
+				<p>这是必要内容</p>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function $(ele){
+			return document.querySelector(ele);
+		}		
+		var deg = 0;
+		$('.content').onclick=function(){
+			deg+=40;
+			this.style.webkitTransform='rotateY('+deg+'deg)';
+		}
+	</script>
+</body>
+</html>
